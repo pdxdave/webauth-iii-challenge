@@ -1,7 +1,7 @@
 // bring in json web token
 const jwt = require('jsonwebtoken');
 // bring in secretes
-const secrets = require('../config/secrets');
+const secrets = require('../config/secrets.js');
 
 module.exports = (req, res, next) => {
 
@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
 
     if(token) {
 
-        jwt.verify(token, secrets.jwtSecret, (err, decodToken) => {
+        jwt.verify(token, secrets.jwtSecret, (err, decodeToken) => {
             if(err){
                 // token not valid
                 res.status(401).json({

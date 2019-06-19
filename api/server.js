@@ -16,9 +16,9 @@ server.use(logger);
 
 
 // router
-// const AuthRouter = require('./routerInfo/usersRouter');
+const AuthRouter = require('../auth/authRouter');
 
-// server.use('/auth', AuthRouter);
+server.use('/auth', AuthRouter);
 
 
 // test output

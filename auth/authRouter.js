@@ -2,7 +2,7 @@
 const express = require('express');
 
 // create router
-const router = require.Router();
+const router = express.Router();
 
 // bring in bcrypt
 const bcrypt = require('bcryptjs');
@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
 const secret = require('../config/secrets.js')
 
 // bring in database link
-const Users = require('../users/usersModel');
+const Users = require('../users/usersModel.js');
 
 
 
@@ -65,7 +65,7 @@ function generateToken(user){
     };
 
     const options = {
-        expires: '8h'
+        expiresIn: '8h'
     }
 
     return jwt.sign(payload, secret.jwtSecret, options)

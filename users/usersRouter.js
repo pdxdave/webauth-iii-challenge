@@ -4,10 +4,10 @@ const express = require('express');
 const router = express.Router();
 
 const Users = require('./usersModel.js');
-const restricted = require('../auth/restrictedMiddleware');
-const checkRole = require('../auth/authRouter')
+const restricted = require('../auth/restrictedMiddleware.js');
+const checkRole = require('../auth/checkRole.js')
 
-router.get('/', restricted, checkRole('student'), (req,res) => {
+router.get('/', restricted, checkRole('student'), (req, res) => {
     Users.find()
     .then(users => {
         res.json(users)
