@@ -8,9 +8,13 @@ exports.up = function(knex, Promise) {
         .notNullable()
         .unique();
 
-        users // new column
+       users // new column
          .string('password', 128)
          .notNullable();
+
+      users // new column
+       .string('department', 128)
+       .notNullable();
    })
 };
 
