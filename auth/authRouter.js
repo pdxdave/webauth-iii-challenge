@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 
 // bring in jason web tokens && secret
 const jwt = require('jsonwebtoken');
-const secret = require('../config/secrets.js')
+const secret = require('../config/secrets.js');
 
 // bring in database link
 const Users = require('../users/usersModel.js');

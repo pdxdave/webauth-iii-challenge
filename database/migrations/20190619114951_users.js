@@ -11,7 +11,6 @@ exports.up = function(knex, Promise) {
         users // new column
          .string('password', 128)
          .notNullable();
-         
    })
 };
 
